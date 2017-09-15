@@ -26,10 +26,10 @@ public class Customer {
 
         while(rentals.hasMoreElements()){
             //System.out.println("There are rentals");
-            double thisAmount=0;
+
             Rental each = (Rental) rentals.nextElement();
 
-            thisAmount=each.getCharge();
+
 
             frequentRenterPoints++;
 
@@ -38,8 +38,8 @@ public class Customer {
                 frequentRenterPoints++;
 
             result += "\t" + each.getMovie().get_title() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
-            totalAmount+=thisAmount;
+                    String.valueOf(each.getCharge()) + "\n";
+            totalAmount+=each.getCharge();
 
         }
 
