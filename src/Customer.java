@@ -43,6 +43,24 @@ public class Customer {
         return result;
     }
 
+    public String htmlStatement(){
+        Enumeration rentals = _rentals.elements();
+        String result = "<H1>Rentals for<EM>" +get_name()+ "</EM></H1><P>\n";
+        while(rentals.hasMoreElements()){
+            Rental each = (Rental) rentals.nextElement();
+
+            result += each.getMovie().get_title() + ": " +
+                    String.valueOf(each.getCharge()) + "<BR>\n";
+        }
+
+        result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) +
+                "</EM><P>\n";
+        result += "On this rental you earned <EM>" +
+                String.valueOf(getTotalFrequentRenterPoints()) +
+                "</EM> frequent renter points<P>";
+        return result;
+    }
+
     private int getTotalFrequentRenterPoints() {
         int frequentRenterPoints=0;
         Enumeration rentals = _rentals.elements();
@@ -78,5 +96,6 @@ public class Customer {
         Rental rental = new Rental(movie, 7);
         customer.addRental(rental);
         System.out.println(customer.statement());
+        System.out.println(customer.htmlStatement());
     }
 }
