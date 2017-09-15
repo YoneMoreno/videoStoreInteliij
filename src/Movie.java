@@ -8,7 +8,7 @@ public class Movie {
 
     public Movie(String title, int priceCode){
         _title=title;
-        _priceCode=priceCode;
+        set_priceCode(priceCode);
     }
 
     public void set_priceCode(int _priceCode) {
