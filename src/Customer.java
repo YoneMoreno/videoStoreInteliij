@@ -30,12 +30,8 @@ public class Customer {
             Rental each = (Rental) rentals.nextElement();
 
 
+            frequentRenterPoints += each.getFrequentRenterPoints();
 
-            frequentRenterPoints++;
-
-            if((each.getMovie().get_priceCode()==Movie.NEW_REALEASE)
-                && each.get_daysRented()>1)
-                frequentRenterPoints++;
 
             result += "\t" + each.getMovie().get_title() + "\t" +
                     String.valueOf(each.getCharge()) + "\n";

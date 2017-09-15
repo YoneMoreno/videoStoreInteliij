@@ -36,4 +36,15 @@ public class Rental {
         }
         return result;
     }
+
+    int getFrequentRenterPoints(){
+        int frequentRenterPoints = 0;
+
+        frequentRenterPoints++;
+
+        if((getMovie().get_priceCode()==Movie.NEW_REALEASE)
+                && get_daysRented()>1)
+            frequentRenterPoints++;
+        return frequentRenterPoints;
+    }
 }
