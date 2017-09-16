@@ -92,10 +92,12 @@ public class Customer {
 
     public static void main(String[] args) {
         Movie movie = new Movie("ET",1);
+        Movie up = new Movie("UP!",2);
         Customer customer = new Customer("Pepe");
         Rental rental = new Rental(movie, 7);
-        customer.addRental(rental);
+        Rental rentUp = new Rental(up, 9);
+        customer.addRental(rental); customer.addRental(rentUp);;
         System.out.println(customer.statement());
-        System.out.println(customer.htmlStatement());
+        //System.out.println(customer.htmlStatement());
     }
 }
